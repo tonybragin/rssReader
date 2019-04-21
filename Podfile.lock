@@ -1,0 +1,20 @@
+PODS:
+  - FeedKit (8.1.1)
+  - SwiftWebVC (0.4.2)
+
+DEPENDENCIES:
+  - FeedKit
+  - SwiftWebVC
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - FeedKit
+    - SwiftWebVC
+
+SPEC CHECKSUMS:
+  FeedKit: 3418eed25f0b493b205b4de1b8511ac21d413fa9
+  SwiftWebVC: ecc4feaabe5a3f75e059a0a345d3386bb0d16c44
+
+PODFILE CHECKSUM: e886c5d459672e1153b42332345167fb6b8016e2
+
+COCOAPODS: 1.6.1
