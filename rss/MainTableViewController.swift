@@ -40,7 +40,7 @@ class MainTableViewController: UITableViewController {
         }
         return 100
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if indexPath.row == 0 {

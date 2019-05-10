@@ -22,8 +22,8 @@ class CoreDataHelper {
     
     let rssHelper = RSSHelper()
     
-    var feedList: [Feed] = []
-    var feedItemsList: [[RSSFeedItem]] = [[]]
+    private(set) var feedList: [Feed] = []
+    private(set) var feedItemsList: [[RSSFeedItem]] = [[]]
     
     func load() throws {
         feedList = []
