@@ -15,7 +15,9 @@ class MainTableViewController: UITableViewController, mySuperProtocol {
     
     var uiController: UITableViewController!
     var feedController: CoreDataHelper!
+    
     private let headerHeight: CGFloat = 50
+    let maxItemsInFeed = 10
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +44,7 @@ class MainTableViewController: UITableViewController, mySuperProtocol {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return feedController.feedItemsList[section].count < 11 ? feedController.feedItemsList[section].count + 1 : 11
+        return feedController.feedItemsList[section].count < maxItemsInFeed ? feedController.feedItemsList[section].count : maxItemsInFeed
         
     }
     
@@ -59,7 +61,7 @@ class MainTableViewController: UITableViewController, mySuperProtocol {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let webBrowser = SwiftWebVC(urlString: feedController.feedItemsList[indexPath.section][indexPath.row-1].link!)
+        let webBrowser = SwiftWebVC(urlString: feedController.feedItemsList[indexPath.section][indexPath.row].link!)
         self.navigationController?.pushViewController(webBrowser, animated: true)
     }
     
