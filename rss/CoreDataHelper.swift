@@ -20,10 +20,16 @@ enum CoreDataErrors: Error {
 
 class CoreDataHelper {
     
-    let rssHelper = RSSHelper()
+    private(set) var rssHelper: RSSHelper
     
-    private(set) var feedList: [Feed] = []
-    private(set) var feedItemsList: [[RSSFeedItem]] = [[]]
+    private(set) var feedList: [Feed]
+    private(set) var feedItemsList: [[RSSFeedItem]]
+    
+    init(rss: RSSHelper) {
+        rssHelper = rss
+        feedList = []
+        feedItemsList = [[]]
+    }
     
     func load() throws {
         feedList = []

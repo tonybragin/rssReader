@@ -54,32 +54,8 @@
                             </items>
                         </navigationBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FeedName" id="Jei-Jf-eQB" customClass="FeedNameCell" customModule="rss" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Jei-Jf-eQB" id="dBi-l7-C0v">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BFy-i9-rik">
-                                            <rect key="frame" x="154.33333333333334" y="6.3333333333333339" width="66.666666666666657" height="31.333333333333329"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="BFy-i9-rik" firstAttribute="centerY" secondItem="dBi-l7-C0v" secondAttribute="centerY" id="F4G-Lb-Y1Q"/>
-                                        <constraint firstItem="BFy-i9-rik" firstAttribute="centerX" secondItem="dBi-l7-C0v" secondAttribute="centerX" id="FcT-s2-wTL"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <color key="backgroundColor" red="0.0" green="0.98106676339999999" blue="0.57369142770000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <connections>
-                                    <outlet property="nameLabel" destination="BFy-i9-rik" id="Pfj-al-1m3"/>
-                                </connections>
-                            </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FeedItem" rowHeight="80" id="NR9-rp-74f" customClass="FeedItemCell" customModule="rss" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="116" width="375" height="80"/>
+                                <rect key="frame" x="0.0" y="72" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NR9-rp-74f" id="hAz-mU-PVF">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="79.666666666666671"/>
@@ -92,7 +68,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="info" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XAL-Iv-D29">
-                                            <rect key="frame" x="30" y="51.333333333333336" width="337" height="20.333333333333336"/>
+                                            <rect key="frame" x="30" y="51.333333333333336" width="28.666666666666671" height="20.333333333333336"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -105,7 +81,7 @@
                                         <constraint firstItem="3BD-gx-zDF" firstAttribute="leading" secondItem="hAz-mU-PVF" secondAttribute="leading" constant="10" id="Krn-Pb-eYB"/>
                                         <constraint firstItem="3BD-gx-zDF" firstAttribute="top" secondItem="hAz-mU-PVF" secondAttribute="top" constant="8" id="aXN-D9-OLO"/>
                                         <constraint firstItem="XAL-Iv-D29" firstAttribute="leading" secondItem="hAz-mU-PVF" secondAttribute="leading" constant="30" id="bs2-EK-en7"/>
-                                        <constraint firstAttribute="trailing" secondItem="XAL-Iv-D29" secondAttribute="trailing" constant="8" id="tF6-of-AVi"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="XAL-Iv-D29" secondAttribute="trailing" constant="8" id="tF6-of-AVi"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
