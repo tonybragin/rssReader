@@ -11,6 +11,9 @@
 		EA2E60F2226AFE6C00CD72F3 /* RSSHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2E60F1226AFE6C00CD72F3 /* RSSHelper.swift */; };
 		EA2E60F4226B080800CD72F3 /* MySuperProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2E60F3226B080800CD72F3 /* MySuperProtocol.swift */; };
 		EA5CDD72226C3AA600CC7581 /* Pods_rss.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF5C36798489EA3C3D563D73 /* Pods_rss.framework */; };
+		EA9A93182287F01D00A4F927 /* SideBarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9A93172287F01D00A4F927 /* SideBarTableViewController.swift */; };
+		EA9A931A2287F18300A4F927 /* SideMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9A93192287F18300A4F927 /* SideMenuCell.swift */; };
+		EA9A931C2287F19F00A4F927 /* SideFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9A931B2287F19F00A4F927 /* SideFeedCell.swift */; };
 		EAC3D7EF226A25CB00D7B5C5 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC3D7EE226A25CB00D7B5C5 /* MainTableViewController.swift */; };
 		EAC3D7F5226A26BE00D7B5C5 /* FeedItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC3D7F4226A26BE00D7B5C5 /* FeedItemCell.swift */; };
 		EACF0EB82286B43700657FA6 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACF0EB72286B43700657FA6 /* HeaderView.swift */; };
@@ -41,6 +44,9 @@
 		EA2E60E6226AFE5100CD72F3 /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		EA2E60F1226AFE6C00CD72F3 /* RSSHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSHelper.swift; sourceTree = "<group>"; };
 		EA2E60F3226B080800CD72F3 /* MySuperProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySuperProtocol.swift; sourceTree = "<group>"; };
+		EA9A93172287F01D00A4F927 /* SideBarTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarTableViewController.swift; sourceTree = "<group>"; };
+		EA9A93192287F18300A4F927 /* SideMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuCell.swift; sourceTree = "<group>"; };
+		EA9A931B2287F19F00A4F927 /* SideFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideFeedCell.swift; sourceTree = "<group>"; };
 		EAC3D7EE226A25CB00D7B5C5 /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		EAC3D7F4226A26BE00D7B5C5 /* FeedItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemCell.swift; sourceTree = "<group>"; };
 		EACF0EB72286B43700657FA6 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
@@ -82,6 +88,36 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		EA40E6542288248700961BCC /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				EAC3D7EE226A25CB00D7B5C5 /* MainTableViewController.swift */,
+				EACF0EB72286B43700657FA6 /* HeaderView.swift */,
+				EAC3D7F4226A26BE00D7B5C5 /* FeedItemCell.swift */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		EA7F8F332288269800D88D8F /* SideBar */ = {
+			isa = PBXGroup;
+			children = (
+				EA9A93172287F01D00A4F927 /* SideBarTableViewController.swift */,
+				EA9A93192287F18300A4F927 /* SideMenuCell.swift */,
+				EA9A931B2287F19F00A4F927 /* SideFeedCell.swift */,
+			);
+			name = SideBar;
+			sourceTree = "<group>";
+		};
+		EA7F8F34228826E600D88D8F /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				EA2E60F1226AFE6C00CD72F3 /* RSSHelper.swift */,
+				EA2E60E6226AFE5100CD72F3 /* CoreDataHelper.swift */,
+				EA2E60F3226B080800CD72F3 /* MySuperProtocol.swift */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
 		EAEEAD012269C569005E1C2A = {
 			isa = PBXGroup;
 			children = (
@@ -103,12 +139,9 @@
 		EAEEAD0C2269C569005E1C2A /* rss */ = {
 			isa = PBXGroup;
 			children = (
-				EA2E60F1226AFE6C00CD72F3 /* RSSHelper.swift */,
-				EA2E60E6226AFE5100CD72F3 /* CoreDataHelper.swift */,
-				EAC3D7EE226A25CB00D7B5C5 /* MainTableViewController.swift */,
-				EACF0EB72286B43700657FA6 /* HeaderView.swift */,
-				EA2E60F3226B080800CD72F3 /* MySuperProtocol.swift */,
-				EAC3D7F4226A26BE00D7B5C5 /* FeedItemCell.swift */,
+				EA40E6542288248700961BCC /* Main */,
+				EA7F8F332288269800D88D8F /* SideBar */,
+				EA7F8F34228826E600D88D8F /* Custom */,
 				EAEEAD0D2269C569005E1C2A /* AppDelegate.swift */,
 				EAEEAD112269C569005E1C2A /* Main.storyboard */,
 				EAEEAD172269C56C005E1C2A /* Assets.xcassets */,
@@ -203,6 +236,7 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-rss/Pods-rss-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/FeedKit/FeedKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftWebVC/SwiftWebVC.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -210,6 +244,7 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FeedKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftWebVC.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -247,8 +282,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAC3D7F5226A26BE00D7B5C5 /* FeedItemCell.swift in Sources */,
+				EA9A931A2287F18300A4F927 /* SideMenuCell.swift in Sources */,
+				EA9A93182287F01D00A4F927 /* SideBarTableViewController.swift in Sources */,
 				EACF0EB82286B43700657FA6 /* HeaderView.swift in Sources */,
 				EAEEAD162269C569005E1C2A /* rss.xcdatamodeld in Sources */,
+				EA9A931C2287F19F00A4F927 /* SideFeedCell.swift in Sources */,
 				EA2E60F2226AFE6C00CD72F3 /* RSSHelper.swift in Sources */,
 				EA2E60E7226AFE5100CD72F3 /* CoreDataHelper.swift in Sources */,
 				EAC3D7EF226A25CB00D7B5C5 /* MainTableViewController.swift in Sources */,

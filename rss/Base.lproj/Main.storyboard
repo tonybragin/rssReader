@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="diR-oT-ZiZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AWQ-VB-Onl">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,21 +9,107 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
+        <!--Side Menu Navigation Controller-->
         <scene sceneID="daf-3Z-dwW">
             <objects>
-                <navigationController id="diR-oT-ZiZ" sceneMemberID="viewController">
+                <navigationController id="diR-oT-ZiZ" customClass="UISideMenuNavigationController" customModule="SideMenu" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2WZ-cV-d5X">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="leftSide" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
-                        <segue destination="vlc-2b-dtm" kind="relationship" relationship="rootViewController" id="id4-5a-Sp7"/>
+                        <segue destination="Qxs-ej-7Qo" kind="relationship" relationship="rootViewController" id="qio-DT-F9c"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5hY-8X-toZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="269" y="41"/>
+            <point key="canvasLocation" x="-537" y="41"/>
+        </scene>
+        <!--Side Bar Table View Controller-->
+        <scene sceneID="hHs-Bm-cYN">
+            <objects>
+                <tableViewController id="Qxs-ej-7Qo" customClass="SideBarTableViewController" customModule="rss" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="vur-8G-6oB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SideMenuCell" rowHeight="72" id="sDd-le-kA3" customClass="SideMenuCell" customModule="rss" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="72"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sDd-le-kA3" id="005-sd-DFA">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="71.666666666666671"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Menu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Az9-hd-2uq">
+                                            <rect key="frame" x="23.999999999999996" y="25.666666666666671" width="44.666666666666657" height="20.333333333333329"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Az9-hd-2uq" firstAttribute="leading" secondItem="005-sd-DFA" secondAttribute="leadingMargin" constant="8" id="2U9-zk-qAT"/>
+                                        <constraint firstItem="Az9-hd-2uq" firstAttribute="centerY" secondItem="005-sd-DFA" secondAttribute="centerY" id="SJ8-nt-Efb"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="nameLabel" destination="Az9-hd-2uq" id="TIb-uW-vnM"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SideFeedCell" id="ffU-js-rgN" customClass="SideFeedCell" customModule="rss" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="100" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ffU-js-rgN" id="2bD-Dm-iQN">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zxb-Sa-SNs">
+                                            <rect key="frame" x="40" y="13" width="37.333333333333343" height="18"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Zxb-Sa-SNs" firstAttribute="leading" secondItem="2bD-Dm-iQN" secondAttribute="leadingMargin" constant="24" id="UxP-LP-cDM"/>
+                                        <constraint firstItem="Zxb-Sa-SNs" firstAttribute="centerY" secondItem="2bD-Dm-iQN" secondAttribute="centerY" id="wMF-dc-4Re"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="nameLabel" destination="Zxb-Sa-SNs" id="Ki6-Yi-ca7"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Qxs-ej-7Qo" id="0hb-mE-eGc"/>
+                            <outlet property="delegate" destination="Qxs-ej-7Qo" id="ZbF-C5-2lP"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="4Bx-4A-YCY"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RXJ-Ei-chv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="305" y="41"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="dMP-zN-mAs">
+            <objects>
+                <navigationController id="AWQ-VB-Onl" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="p8v-iW-VVN">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="vlc-2b-dtm" kind="relationship" relationship="rootViewController" id="rP2-Nz-WRj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0SQ-zZ-93c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2063" y="41"/>
         </scene>
         <!--Main Table View Controller-->
         <scene sceneID="xbM-tR-HvW">
@@ -38,16 +124,24 @@
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <items>
                                 <navigationItem title="RSS" id="FaO-qD-EFM">
-                                    <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="RN9-cF-DZV">
+                                    <leftBarButtonItems>
+                                        <barButtonItem systemItem="organize" id="dov-KR-xIy">
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <segue destination="diR-oT-ZiZ" kind="presentation" id="3ge-ag-v2y"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem systemItem="add" id="Nq4-wf-IxI">
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <connections>
+                                                <action selector="addButton:" destination="vlc-2b-dtm" id="sgd-MT-fdQ"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </leftBarButtonItems>
+                                    <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="RN9-cF-DZV">
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <action selector="refreshButton:" destination="vlc-2b-dtm" id="uXR-32-l7C"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem key="rightBarButtonItem" systemItem="add" id="Nq4-wf-IxI">
-                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <connections>
-                                            <action selector="addButton:" destination="vlc-2b-dtm" id="sgd-MT-fdQ"/>
                                         </connections>
                                     </barButtonItem>
                                 </navigationItem>
@@ -101,7 +195,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U0A-je-bZz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1128.8" y="40.64039408866995"/>
+            <point key="canvasLocation" x="-1327" y="41"/>
         </scene>
     </scenes>
 </document>

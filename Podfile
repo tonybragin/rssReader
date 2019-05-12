@@ -8,5 +8,6 @@ target 'rss' do
   # Pods for rss
   pod 'SwiftWebVC'
   pod 'FeedKit'
+  pod 'SideMenu'
 
 end

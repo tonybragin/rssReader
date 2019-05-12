@@ -12,12 +12,14 @@ class HeaderView: UIView, mySuperProtocol {
     
     var uiController: UITableViewController!
     var feedController: CoreDataHelper!
+    var favorited: Bool = false
     
     private var feed: Feed!
     
     var titleLabel: UILabel!
     var editButton: UIButton!
     var deleteButton: UIButton!
+    var favoriteButton: UIButton!
     
     init(for feed: Feed, width: CGFloat, height: CGFloat, sender: (ui: UITableViewController, feed: CoreDataHelper)) {
         super.init(frame: CGRect(x: 0, y: 0, width: width, height: height))
@@ -27,10 +29,16 @@ class HeaderView: UIView, mySuperProtocol {
         self.feedController = sender.feed
         self.feed = feed
         
-        self.titleLabel = UILabel(frame: CGRect(x: 10, y: 0, width: width - 120, height: height))
+        self.titleLabel = UILabel(frame: CGRect(x: 10, y: 0, width: width - 180, height: height))
         self.titleLabel.font = .preferredFont(forTextStyle: .title1)
         self.titleLabel.text = self.feed.name
         self.addSubview(self.titleLabel)
+        
+        self.deleteButton = UIButton(frame: CGRect(x: width - 60, y: 0, width: 60, height: height))
+        self.deleteButton.setTitle("delete", for: .normal)
+        self.deleteButton.backgroundColor = .red
+        self.deleteButton.addTarget(self, action: #selector(deleteAction), for: .touchUpInside)
+        self.addSubview(self.deleteButton)
         
         self.editButton = UIButton(frame: CGRect(x: width - 120, y: 0, width: 60, height: height))
         self.editButton.setTitle("edit", for: .normal)
@@ -38,11 +46,16 @@ class HeaderView: UIView, mySuperProtocol {
         self.editButton.addTarget(self, action: #selector(editAction), for: .touchUpInside)
         self.addSubview(self.editButton)
         
-        self.deleteButton = UIButton(frame: CGRect(x: width - 60, y: 0, width: 60, height: height))
-        self.deleteButton.setTitle("delete", for: .normal)
-        self.deleteButton.backgroundColor = .red
-        self.deleteButton.addTarget(self, action: #selector(deleteAction), for: .touchUpInside)
-        self.addSubview(self.deleteButton)
+        self.favoriteButton = UIButton(frame: CGRect(x: width - 180, y: 0, width: 60, height: height))
+        self.favoriteButton.setTitle("fav", for: .normal)
+        if feed.favorite {
+            self.favoriteButton.backgroundColor = .yellow
+        } else {
+            self.favoriteButton.backgroundColor = .gray
+        }
+        self.favoriteButton.addTarget(self, action: #selector(favoriteAction), for: .touchUpInside)
+        self.addSubview(self.favoriteButton)
+        
     }
     
     @objc
@@ -59,6 +72,17 @@ class HeaderView: UIView, mySuperProtocol {
         } catch {
             alert(title: "error", message: "error delete")
         }
+    }
+    
+    @objc
+    func favoriteAction() {
+        performFavoriteChange(feed: feed)
+        if feed.favorite {
+            self.favoriteButton.backgroundColor = .gray
+        } else {
+            self.favoriteButton.backgroundColor = .yellow
+        }
+        refresh()
     }
     
     required init?(coder aDecoder: NSCoder) {

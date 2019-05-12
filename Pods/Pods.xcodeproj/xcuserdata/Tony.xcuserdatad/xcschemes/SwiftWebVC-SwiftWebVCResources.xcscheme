@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1020"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1BEE99451E4347CBDDE4FA3C90649E57"
+               BlueprintIdentifier = "C93AF8EBA5B1A109B98087FD1FDB33DA"
                BuildableName = "SwiftWebVCResources.bundle"
                BlueprintName = "SwiftWebVC-SwiftWebVCResources"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1BEE99451E4347CBDDE4FA3C90649E57"
+            BlueprintIdentifier = "C93AF8EBA5B1A109B98087FD1FDB33DA"
             BuildableName = "SwiftWebVCResources.bundle"
             BlueprintName = "SwiftWebVC-SwiftWebVCResources"
             ReferencedContainer = "container:Pods.xcodeproj">

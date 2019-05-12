@@ -31,7 +31,7 @@ class CoreDataHelper {
         feedItemsList = [[]]
     }
     
-    func load() throws {
+    func load(favorited: Bool) throws {
         feedList = []
         feedItemsList = [[]]
         
@@ -40,6 +40,9 @@ class CoreDataHelper {
         let request = NSFetchRequest<Feed>(entityName: "Feed")
         request.returnsObjectsAsFaults = false
         request.sortDescriptors = [NSSortDescriptor(key: #keyPath(Feed.name), ascending: true)]
+        if favorited {
+            request.predicate = NSPredicate(format: "favorite = YES")
+        }
         
         let result = try context.fetch(request)
         feedList = result
@@ -50,6 +53,8 @@ class CoreDataHelper {
         
         feedItemsList.remove(at: 0)
     }
+    
+    
     
     func getContext() -> NSManagedObjectContext {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -106,6 +111,11 @@ class CoreDataHelper {
         } catch {
             throw CoreDataErrors.editError
         }
+    }
+    
+    func changeFavorite(feed:Feed) throws {
+        feed.favorite = !feed.favorite
+        try save()
     }
     
     func delete(feed:Feed) throws {

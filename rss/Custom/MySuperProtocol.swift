@@ -13,10 +13,12 @@ import CoreData
 protocol mySuperProtocol {
     var uiController: UITableViewController! {get}
     var feedController: CoreDataHelper! {get}
+    var favorited: Bool {get set}
     
     func alert(title: String, message: String)
     func refresh()
     func editFeedNameAlert(name: String, url: String)
+    func performFavoriteChange(feed: Feed)
 }
 
 extension mySuperProtocol {
@@ -30,7 +32,7 @@ extension mySuperProtocol {
     
     func refresh() {
         do {
-            try feedController.load()
+            try feedController.load(favorited: favorited)
         } catch {
             alert(title: "Error", message: "error refresh")
         }
@@ -94,6 +96,16 @@ extension mySuperProtocol {
         })
         
         uiController.present(editFeedAlert, animated: true)
+    }
+    
+    func performFavoriteChange(feed: Feed) {
+        do {
+            try feedController.changeFavorite(feed: feed)
+        } catch {
+            self.alert(title: "Error", message: "error favorite change")
+            return
+        }
+        
     }
     
 }

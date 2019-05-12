@@ -1,20 +1,24 @@
 PODS:
   - FeedKit (8.1.1)
+  - SideMenu (5.0.1)
   - SwiftWebVC (0.4.2)
 
 DEPENDENCIES:
   - FeedKit
+  - SideMenu
   - SwiftWebVC
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - FeedKit
+    - SideMenu
     - SwiftWebVC
 
 SPEC CHECKSUMS:
   FeedKit: 3418eed25f0b493b205b4de1b8511ac21d413fa9
+  SideMenu: 87efd943737bb83aedf0358884d09fcf5576636d
   SwiftWebVC: ecc4feaabe5a3f75e059a0a345d3386bb0d16c44
 
-PODFILE CHECKSUM: e886c5d459672e1153b42332345167fb6b8016e2
+PODFILE CHECKSUM: c4bef0180de3f74ca21093b7522b7d69d74da592
 
 COCOAPODS: 1.6.1

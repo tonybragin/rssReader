@@ -10,11 +10,13 @@ import UIKit
 import FeedKit
 import CoreData
 import SwiftWebVC
+import SideMenu
 
 class MainTableViewController: UITableViewController, mySuperProtocol {
     
     var uiController: UITableViewController!
     var feedController: CoreDataHelper!
+    var favorited: Bool = false
     
     private let headerHeight: CGFloat = 50
     let maxItemsInFeed = 10
@@ -77,4 +79,23 @@ class MainTableViewController: UITableViewController, mySuperProtocol {
         editFeedNameAlert(name: "", url: "")
         refresh()
     }
+}
+
+extension MainTableViewController: UISideMenuNavigationControllerDelegate {
+    
+    func sideMenuWillDisappear(menu: UISideMenuNavigationController, animated: Bool) {
+        
+        if let controller = menu.viewControllers.first as? SideBarTableViewController {
+            if let index = controller.indexStart {
+                favorited = false
+                refresh()
+                self.tableView.scrollToRow(at: index, at: .top, animated: true)
+            } else {
+                favorited = controller.favorited
+                refresh()
+            }
+           
+        }
+    }
+    
 }

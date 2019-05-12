@@ -14,9 +14,9 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CE91AB9066CC605CD82749A0B83A0131"
-               BuildableName = "SwiftWebVC.framework"
-               BlueprintName = "SwiftWebVC"
+               BlueprintIdentifier = "0DF48FB10586089141A2FE7E80334A99"
+               BuildableName = "SideMenu.framework"
+               BlueprintName = "SideMenu"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
