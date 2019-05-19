@@ -32,7 +32,6 @@ class MainTableViewController: UITableViewController, mySuperProtocol {
     }
 
     // MARK: - Table view data source
-    
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return headerHeight
     }
@@ -47,7 +46,6 @@ class MainTableViewController: UITableViewController, mySuperProtocol {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return feedController.feedItemsList[section].count < maxItemsInFeed ? feedController.feedItemsList[section].count : maxItemsInFeed
-        
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -79,6 +77,11 @@ class MainTableViewController: UITableViewController, mySuperProtocol {
         editFeedNameAlert(name: "", url: "")
         refresh()
     }
+    
+    @IBAction func refresherAction(_ sender: UIRefreshControl) {
+        sender.endRefreshing()
+        refresh()
+    }
 }
 
 extension MainTableViewController: UISideMenuNavigationControllerDelegate {
@@ -89,13 +92,17 @@ extension MainTableViewController: UISideMenuNavigationControllerDelegate {
             if let index = controller.indexStart {
                 favorited = false
                 refresh()
-                self.tableView.scrollToRow(at: index, at: .top, animated: true)
+                
+                DispatchQueue.main.async {
+                    self.tableView.scrollToRow(at: index, at: .top, animated: true)
+                }
+                
             } else {
                 favorited = controller.favorited
                 refresh()
             }
-           
         }
+        
     }
     
 }

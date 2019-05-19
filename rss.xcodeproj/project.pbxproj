@@ -88,6 +88,16 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		EA359D4B22910E65002C8F59 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				EA2E60F1226AFE6C00CD72F3 /* RSSHelper.swift */,
+				EA2E60E6226AFE5100CD72F3 /* CoreDataHelper.swift */,
+				EA2E60F3226B080800CD72F3 /* MySuperProtocol.swift */,
+			);
+			name = Custom;
+			sourceTree = "<group>";
+		};
 		EA40E6542288248700961BCC /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -106,16 +116,6 @@
 				EA9A931B2287F19F00A4F927 /* SideFeedCell.swift */,
 			);
 			name = SideBar;
-			sourceTree = "<group>";
-		};
-		EA7F8F34228826E600D88D8F /* Custom */ = {
-			isa = PBXGroup;
-			children = (
-				EA2E60F1226AFE6C00CD72F3 /* RSSHelper.swift */,
-				EA2E60E6226AFE5100CD72F3 /* CoreDataHelper.swift */,
-				EA2E60F3226B080800CD72F3 /* MySuperProtocol.swift */,
-			);
-			path = Custom;
 			sourceTree = "<group>";
 		};
 		EAEEAD012269C569005E1C2A = {
@@ -141,7 +141,7 @@
 			children = (
 				EA40E6542288248700961BCC /* Main */,
 				EA7F8F332288269800D88D8F /* SideBar */,
-				EA7F8F34228826E600D88D8F /* Custom */,
+				EA359D4B22910E65002C8F59 /* Custom */,
 				EAEEAD0D2269C569005E1C2A /* AppDelegate.swift */,
 				EAEEAD112269C569005E1C2A /* Main.storyboard */,
 				EAEEAD172269C56C005E1C2A /* Assets.xcassets */,

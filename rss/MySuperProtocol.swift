@@ -36,7 +36,11 @@ extension mySuperProtocol {
         } catch {
             alert(title: "Error", message: "error refresh")
         }
-        uiController.tableView.reloadData()
+        
+        DispatchQueue.main.async {
+            self.uiController.tableView.reloadData()
+        }
+        //uiController.tableView.reloadData()
     }
     
     func editFeedNameAlert(name: String, url: String) {

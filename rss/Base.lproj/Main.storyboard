@@ -192,6 +192,12 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="4A8-FF-ZsO"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="Zkn-SC-lId">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <action selector="refresherAction:" destination="vlc-2b-dtm" eventType="valueChanged" id="hSM-dp-1jH"/>
+                        </connections>
+                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U0A-je-bZz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
